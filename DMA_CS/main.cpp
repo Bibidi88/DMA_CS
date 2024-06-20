@@ -1,8 +1,25 @@
 // Example.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+#pragma once
+#include <Windows.h>
+#include <chrono>
+#include <thread>
+
 #include <iostream>
+#include <vector>
+
 #include <DMALibrary/Memory/Memory.h>
+
+#include "imgui.h"
+#include "backend/imgui_impl_glfw.h"
+#include "backend/imgui_impl_opengl3.h"
+
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+
+#include <Gui/gui.hpp>
+
 
 int main(int argc, char* argv[])
 {
@@ -60,6 +77,8 @@ int main(int argc, char* argv[])
 
 	//Always make sure to clean up the handle, otherwise you'll end up with a memory leak.
 	mem.CloseScatterHandle(handle);
+
+	gui::start();
 
 	std::cout << "Hello World!\n";
 	//pause();

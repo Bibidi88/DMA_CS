@@ -71,10 +71,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\include;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\DMALibrary;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\dependencies\include;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\dependencies\ImGui;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\DMALibrary;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\include;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\DMALibrary;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\dependencies\include;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\dependencies\ImGui;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\DMALibrary;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -135,6 +135,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="dependencies\ImGui\backend\imgui_impl_glfw.h" />
+    <ClInclude Include="dependencies\ImGui\backend\imgui_impl_opengl3.h" />
+    <ClInclude Include="dependencies\ImGui\backend\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="dependencies\ImGui\imconfig.h" />
+    <ClInclude Include="dependencies\ImGui\imgui.h" />
+    <ClInclude Include="dependencies\ImGui\imgui_internal.h" />
+    <ClInclude Include="dependencies\ImGui\imstb_rectpack.h" />
+    <ClInclude Include="dependencies\ImGui\imstb_textedit.h" />
+    <ClInclude Include="dependencies\ImGui\imstb_truetype.h" />
+    <ClInclude Include="dependencies\include\glad\glad.h" />
+    <ClInclude Include="dependencies\include\GLFW\glfw3.h" />
+    <ClInclude Include="dependencies\include\GLFW\glfw3native.h" />
+    <ClInclude Include="dependencies\include\KHR\khrplatform.h" />
     <ClInclude Include="DMALibrary\framework.h" />
     <ClInclude Include="DMALibrary\libs\leechcore.h" />
     <ClInclude Include="DMALibrary\libs\vmmdll.h" />
@@ -144,12 +157,21 @@
     <ClInclude Include="DMALibrary\Memory\Shellcode.h" />
     <ClInclude Include="DMALibrary\nt\structs.h" />
     <ClInclude Include="DMALibrary\pch.h" />
+    <ClInclude Include="Gui\gui.hpp" />
+    <ClInclude Include="Gui\Renderer.hpp" />
     <ClInclude Include="include\glad\glad.h" />
     <ClInclude Include="include\GLFW\glfw3.h" />
     <ClInclude Include="include\GLFW\glfw3native.h" />
     <ClInclude Include="include\KHR\khrplatform.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="dependencies\ImGui\backend\imgui_impl_glfw.cpp" />
+    <ClCompile Include="dependencies\ImGui\backend\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="dependencies\ImGui\imgui.cpp" />
+    <ClCompile Include="dependencies\ImGui\imgui_demo.cpp" />
+    <ClCompile Include="dependencies\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="dependencies\ImGui\imgui_tables.cpp" />
+    <ClCompile Include="dependencies\ImGui\imgui_widgets.cpp" />
     <ClCompile Include="DMALibrary\DMALibrary.cpp" />
     <ClCompile Include="DMALibrary\Memory\InputManager.cpp" />
     <ClCompile Include="DMALibrary\Memory\Memory.cpp" />
@@ -165,6 +187,7 @@
     <None Include="vmm.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Library Include="dependencies\lib\glfw3.lib" />
     <Library Include="DMALibrary\libs\leechcore.lib" />
     <Library Include="DMALibrary\libs\vmm.lib" />
   </ItemGroup>
