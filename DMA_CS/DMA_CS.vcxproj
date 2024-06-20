@@ -71,10 +71,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\DMALibrary;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\include;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\DMALibrary;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\DMALibrary;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\include;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS;C:\Users\Bibidi\Desktop\Programming\DMA_CS\DMA_CS\DMALibrary;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -135,14 +135,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DMALibrary\DMALibrary.cpp" />
-    <ClCompile Include="DMALibrary\Memory\InputManager.cpp" />
-    <ClCompile Include="DMALibrary\Memory\Memory.cpp" />
-    <ClCompile Include="DMALibrary\Memory\Registry.cpp" />
-    <ClCompile Include="DMALibrary\Memory\Shellcode.cpp" />
-    <ClCompile Include="DMALibrary\pch.cpp" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DMALibrary\framework.h" />
     <ClInclude Include="DMALibrary\libs\leechcore.h" />
@@ -153,6 +145,16 @@
     <ClInclude Include="DMALibrary\Memory\Shellcode.h" />
     <ClInclude Include="DMALibrary\nt\structs.h" />
     <ClInclude Include="DMALibrary\pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DMALibrary\DMALibrary.cpp" />
+    <ClCompile Include="DMALibrary\Memory\InputManager.cpp" />
+    <ClCompile Include="DMALibrary\Memory\Memory.cpp" />
+    <ClCompile Include="DMALibrary\Memory\Registry.cpp" />
+    <ClCompile Include="DMALibrary\Memory\Shellcode.cpp" />
+    <ClCompile Include="DMALibrary\pch.cpp" />
+    <ClCompile Include="glad.c" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FTD3XX.dll" />
