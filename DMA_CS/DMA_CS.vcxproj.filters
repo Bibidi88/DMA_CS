@@ -36,6 +36,42 @@
     <ClCompile Include="DMALibrary\pch.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Core\offsets.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\ImGui\backend\imgui_impl_glfw.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\ImGui\backend\imgui_impl_opengl3.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\ImGui\imgui.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\ImGui\imgui_demo.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\ImGui\imgui_draw.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\ImGui\imgui_tables.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="dependencies\ImGui\imgui_widgets.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="glad.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\vector.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\client.dll.hpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Vector2D.hpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DMALibrary\libs\leechcore.h">
@@ -65,6 +101,75 @@
     <ClInclude Include="DMALibrary\pch.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="dependencies\ImGui\backend\imgui_impl_glfw.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\ImGui\backend\imgui_impl_opengl3.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\ImGui\backend\imgui_impl_opengl3_loader.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\ImGui\imconfig.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\ImGui\imgui.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\ImGui\imgui_internal.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\ImGui\imstb_rectpack.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\ImGui\imstb_textedit.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\ImGui\imstb_truetype.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\glad\glad.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\GLFW\glfw3.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\GLFW\glfw3native.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\KHR\khrplatform.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Features\esp.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\gui.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\Renderer.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glad\glad.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLFW\glfw3.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLFW\glfw3native.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="include\KHR\khrplatform.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\features.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\viewMatrix.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Vector3D.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="FTD3XX.dll" />
@@ -74,5 +179,6 @@
   <ItemGroup>
     <Library Include="DMALibrary\libs\leechcore.lib" />
     <Library Include="DMALibrary\libs\vmm.lib" />
+    <Library Include="dependencies\lib\glfw3.lib" />
   </ItemGroup>
 </Project>

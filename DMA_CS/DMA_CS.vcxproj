@@ -157,14 +157,20 @@
     <ClInclude Include="DMALibrary\Memory\Shellcode.h" />
     <ClInclude Include="DMALibrary\nt\structs.h" />
     <ClInclude Include="DMALibrary\pch.h" />
+    <ClInclude Include="Features\esp.hpp" />
     <ClInclude Include="Gui\gui.hpp" />
     <ClInclude Include="Gui\Renderer.hpp" />
     <ClInclude Include="include\glad\glad.h" />
     <ClInclude Include="include\GLFW\glfw3.h" />
     <ClInclude Include="include\GLFW\glfw3native.h" />
     <ClInclude Include="include\KHR\khrplatform.h" />
+    <ClInclude Include="Math\Vector3D.hpp" />
+    <ClInclude Include="Math\viewMatrix.hpp" />
+    <ClInclude Include="Utils\features.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Core\client.dll.hpp" />
+    <ClCompile Include="Core\offsets.hpp" />
     <ClCompile Include="dependencies\ImGui\backend\imgui_impl_glfw.cpp" />
     <ClCompile Include="dependencies\ImGui\backend\imgui_impl_opengl3.cpp" />
     <ClCompile Include="dependencies\ImGui\imgui.cpp" />
@@ -180,6 +186,8 @@
     <ClCompile Include="DMALibrary\pch.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Math\vector.hpp" />
+    <ClCompile Include="Math\Vector2D.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FTD3XX.dll" />
