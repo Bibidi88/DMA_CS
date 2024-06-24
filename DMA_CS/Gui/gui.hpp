@@ -1,4 +1,5 @@
 #pragma once
+#include <Features/esp.hpp>
 
 #define min(a,b)            (((a) < (b)) ? (a) : (b))
 #define max(a,b)            (((a) > (b)) ? (a) : (b))
@@ -64,7 +65,7 @@ namespace gui {
     }
 
     //void renderGUI(Esp* ESP, Aimbot* AimAssist, Triggerbot* Trigger) {
-    void renderGUI() {
+    void renderGUI(ESP* esp, auto client) {
         auto io = ImGui::GetIO();
         ImGui::SetNextWindowSize(io.DisplaySize);
         ImGui::SetNextWindowPos(ImVec2(0, 0));
@@ -79,7 +80,7 @@ namespace gui {
         );
 
         Canvas = ImGui::GetWindowDrawList();
-        //ESP->RenderDrawings(Canvas, AimAssist);
+        esp->RenderDrawings(Canvas, client);
         ImGui::End();
 
         // Toggle menu visibility with the 'M' key
@@ -106,7 +107,7 @@ namespace gui {
             // Draw shit
             //AimAssist->RenderUI();
             //Trigger->RenderUI();
-            //ESP->RenderUI();
+            esp->RenderUI();
 
             // Draw Credits //
             if (ImGui::BeginTabItem("Credits", nullptr, ImGuiTabItemFlags_NoCloseWithMiddleMouseButton | ImGuiTabItemFlags_NoReorder)) {
@@ -130,14 +131,14 @@ namespace gui {
 
         ImDrawList* CanvasOverview = ImGui::GetWindowDrawList();
 
-        //ESP->RenderOverView(CanvasOverview, window2_pos);
+       esp->RenderOverView(CanvasOverview, window2_pos);
 
 
         ImGui::End();
     }
 
     //void start(Esp* ESP, Aimbot* AimAssist, Triggerbot* Trigger) {
-    void start() {
+    void start(ESP* esp, auto client) {
         InitializeGLFW();
         GrabScreenSize();
 
@@ -174,7 +175,7 @@ namespace gui {
 
             // Render ImGui GUI
            // renderGUI(ESP, AimAssist, Trigger);
-            renderGUI();
+            renderGUI(esp, client);
 
             // Rendering
             ImGui::Render();

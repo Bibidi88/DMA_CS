@@ -5,7 +5,6 @@
 #include <Windows.h>
 #include <chrono>
 #include <thread>
-
 #include <iostream>
 #include <vector>
 
@@ -19,69 +18,52 @@
 #include <GLFW/glfw3.h>
 
 #include <Gui/gui.hpp>
+#include <Features/esp.hpp> 
+#include <atomic>
+
+std::atomic<bool> running(true);
+
+ESP* esp = new ESP();
+
+int main(int argc, char* argv[]) {
+
+    // Initialize DMA
+    while (!mem.Init("cs2.exe", true, false)) {
+        std::cerr << "waiting to initialize DMA" << std::endl;
+        Sleep(1);
+    }
+    std::cout << "DMA initialized" << std::endl;
+
+    if (!mem.GetKeyboard()->InitKeyboard()) {
+        std::cerr << "Failed to initialize keyboard hotkeys through kernel." << std::endl;
+        std::cerr << "Press ENTER to continue...";
+        std::cin.get();
+        return -1;
+    }
+
+    uintptr_t BasePointer = mem.GetBaseDaddy("client.dll");
+    if (!BasePointer) {
+        std::cerr << "Failed to get client base address" << std::endl;
+        return -1;
+    }
+    std::cout << "Client base address: " << BasePointer << std::endl;
+
+   // std::thread update(updateCore, &esp, BasePointer);
+    //std::thread update(updateCore);
+    //update.detach();
+    //std::thread gui(startGui);
+    //gui.detach();
 
 
-int main(int argc, char* argv[])
-{
-	if (!mem.Init("explorer.exe", true, true))
-	{
-		std::cout << "Failed to initilize DMA" << std::endl;
-		return 1;
-	}
+    gui::start(esp, BasePointer);
 
-	std::cout << "DMA initilized" << std::endl;
 
-	if (!mem.GetKeyboard()->InitKeyboard())
-	{
-		std::cout << "Failed to initialize keyboard hotkeys through kernel." << std::endl;
-		return 1;
-	}
 
-	//example keyboard usage.
-	std::cout << "Continueing once 'A' has been pressed." << std::endl;
-	while (!mem.GetKeyboard()->IsKeyDown(0x41))
-	{
-		Sleep(100);
-	}
+    // Join threads (or add a mechanism to stop them gracefully)
+    //update.join();
+    //gui.join();
 
-	if (!mem.FixCr3())
-		std::cout << "Failed to fix CR3" << std::endl;
-	else
-		std::cout << "CR3 fixed" << std::endl;
-
-	uintptr_t base = mem.GetBaseDaddy("explorer.exe");
-
-	std::cout << "Value: " << mem.Read<int>(base + 0x66) << std::endl;
-	mem.Write<int>(base + 0x66, 0x69);
-	std::cout << "Value: " << mem.Read<int>(base + 0x66) << std::endl;
-
-	int value = 0;
-	if (mem.Read(base + 0x66, &value, sizeof(value)))
-		std::cout << "Read Value" << std::endl;
-	else
-		std::cout << "Failed to read Value" << std::endl;
-	std::cout << "Value: " << value << std::endl;
-
-	auto handle = mem.CreateScatterHandle();
-
-	value = 0;
-	mem.AddScatterReadRequest(handle, base + 0x66, &value, sizeof(value));
-	//You have to execute the read requests before you can read the values.
-	mem.ExecuteReadScatter(handle);
-	std::cout << "Value: " << value << std::endl;
-
-	//You can also write to memory using scatter requests.
-	value = 500;
-	mem.AddScatterWriteRequest(handle, base + 0x66, &value, sizeof(value));
-	mem.ExecuteWriteScatter(handle);
-
-	//Always make sure to clean up the handle, otherwise you'll end up with a memory leak.
-	mem.CloseScatterHandle(handle);
-
-	gui::start();
-
-	std::cout << "Hello World!\n";
-	//pause();
-	Sleep(10000);
-	return 0;
+    return 0;
 }
+
+
