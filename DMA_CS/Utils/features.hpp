@@ -1,6 +1,17 @@
-
+#pragma once
 
 namespace Features {
+
+    namespace Settings {
+        bool ESPEnabled = true;
+        bool DeadCheck = false;
+        bool OverlayEnabled = true;
+        bool AntiAliasedLines = true;
+        bool FPSCap = false;
+        int CappedFPS = 144;
+        bool ShowKeybinds = false;
+        float KeybindColor[4] = { 0.99, 0, 0, 0.99 };
+    };
 
     namespace Home {
         bool IsMenuOpened = true;
@@ -24,7 +35,7 @@ namespace Features {
             bool DrawBoxes = true;
             bool BoxOutline = true;
             int BoxType = 0;
-            int BoxStyle = 0;
+            int BoxStyle = 1;
             float BoxThickness = 1.0;
         }
     }

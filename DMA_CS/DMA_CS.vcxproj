@@ -135,6 +135,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Core\camera.hpp" />
+    <ClInclude Include="Core\localPlayer.hpp" />
+    <ClInclude Include="Core\player.hpp" />
     <ClInclude Include="dependencies\ImGui\backend\imgui_impl_glfw.h" />
     <ClInclude Include="dependencies\ImGui\backend\imgui_impl_opengl3.h" />
     <ClInclude Include="dependencies\ImGui\backend\imgui_impl_opengl3_loader.h" />
@@ -157,6 +160,7 @@
     <ClInclude Include="DMALibrary\Memory\Shellcode.h" />
     <ClInclude Include="DMALibrary\nt\structs.h" />
     <ClInclude Include="DMALibrary\pch.h" />
+    <ClInclude Include="Features\Aimbot.hpp" />
     <ClInclude Include="Features\esp.hpp" />
     <ClInclude Include="Gui\gui.hpp" />
     <ClInclude Include="Gui\Renderer.hpp" />
@@ -164,12 +168,15 @@
     <ClInclude Include="include\GLFW\glfw3.h" />
     <ClInclude Include="include\GLFW\glfw3native.h" />
     <ClInclude Include="include\KHR\khrplatform.h" />
+    <ClInclude Include="KmBox\kmbox_interface.hpp" />
     <ClInclude Include="Math\Vector3D.hpp" />
     <ClInclude Include="Math\viewMatrix.hpp" />
     <ClInclude Include="Utils\features.hpp" />
+    <ClInclude Include="Utils\hitboxType.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\client.dll.hpp" />
+    <ClCompile Include="Core\CoreUpdater.hpp" />
     <ClCompile Include="Core\offsets.hpp" />
     <ClCompile Include="dependencies\ImGui\backend\imgui_impl_glfw.cpp" />
     <ClCompile Include="dependencies\ImGui\backend\imgui_impl_opengl3.cpp" />
